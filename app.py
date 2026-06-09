@@ -107,21 +107,8 @@ def sidebar():
         st.markdown("## 🏗️ Compliance Inspector")
         st.markdown("---")
 
-        st.markdown("### 🔑 Groq API Key")
-        
-        # Try to load from environment first
-        env_api_key = os.getenv("GROQ_API_KEY")
-        
-        if env_api_key:
-            st.markdown('<span style="font-size:0.78rem;color:#3fb950;padding:4px 8px;background:#1f4a2e;border-radius:6px;display:inline-block;">✅ Loaded from .env</span>', unsafe_allow_html=True)
-            api_key = env_api_key
-        else:
-            api_key = st.text_input("", type="password", placeholder="gsk_...",
-                                    help="Free at console.groq.com")
-            if not api_key:
-                st.warning("⚠️ No API key found. Set GROQ_API_KEY in .env file or enter above")
-        
-        st.markdown('<span style="font-size:0.72rem;color:#8b949e;">Free tier · 14,400 req/day · <a href="https://console.groq.com" style="color:#388bfd;">console.groq.com</a></span>', unsafe_allow_html=True)
+        # Load API key from environment
+        api_key = os.getenv("GROQ_API_KEY")
 
         st.markdown("---")
         st.markdown("### 📂 Upload Documents")
