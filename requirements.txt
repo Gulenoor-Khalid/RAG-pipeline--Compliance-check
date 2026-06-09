@@ -5,3 +5,4 @@ groq>=0.4.0
 sentence-transformers>=2.3.0
 # Optional but recommended for faster vector search on large corpora:
 # faiss-cpu>=1.7.4
+python-dotenv>=1.0.0
